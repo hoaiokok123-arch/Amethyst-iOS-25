@@ -32,10 +32,10 @@ jobs:
           ls -lah ./
           
       - name: Checkout repository
-        uses: actions/checkout@main
-
-      - name: Checkout repository submodules
-        run: git submodule update --init --recursive
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
 
       - name: Get gl4es latest commit hash
         id: gl4es-sha
